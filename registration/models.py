@@ -14,4 +14,4 @@ class User(AbstractUser):
         """Populates username field with email. """
         if not self.username:
             self.username = self.email
-        super(CustomUser,self).save(*args,**kwargs)
+        super(User,self).save(*args,**kwargs)
