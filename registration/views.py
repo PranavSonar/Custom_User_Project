@@ -10,10 +10,10 @@ from .forms import SignUpForm, LoginForm
 
 class SignupView(CreateView):
     form_class = SignUpForm
-    template_name = 'users/signup.html'
+    template_name = 'registration/signup.html'
 
     def get_success_url(self):
-        return reverse_lazy('core:shipping')
+        return reverse_lazy('registration:index')
 
     def form_valid(self, form):
         valid = super(SignupView, self).form_valid(form)
