@@ -39,6 +39,9 @@
                     <ul class="navbar-nav nav-flex-icons">
                           {% if user.is_authenticated %}
                             <li class="nav-item">
+                              <a href="{% url 'registration:profile' pk=user.pk %}" class="nav-link waves-effect">Profile</a>
+                            </li>
+                            <li class="nav-item">
                               <a href="{% url 'registration:logout' %}" class="nav-link waves-effect">Logout</a>
                             </li>
                           {% else %}
