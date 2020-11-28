@@ -5,14 +5,6 @@ from crispy_forms.layout import Layout, Fieldset, Row, Column
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 
-class LoginForm(AuthenticationForm):
-    email = forms.EmailField(label='Email')
-
-    def __init__(self,*args,**kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_tag = False
-
 class SignUpForm(UserCreationForm):
     class Meta:
         model = get_user_model()

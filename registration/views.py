@@ -5,7 +5,6 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth import login, authenticate
 from django.views.generic import CreateView
 
-from .forms import SignUpForm, LoginForm
 # Create your views here.
 
 class SignupView(CreateView):
@@ -22,8 +21,3 @@ class SignupView(CreateView):
                             password=password)
         login(self.request, user)
         return valid
-
-
-class LoginView(auth_views.LoginView):
-    form_class = LoginForm
-    template_name = 'registration/login.html'
